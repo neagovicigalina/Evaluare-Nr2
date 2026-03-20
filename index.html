@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluare Nr.2 - Pași</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .step {
+            background: white;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .command {
+            background: #f0f0f0;
+            padding: 10px;
+            font-family: monospace;
+            border-left: 4px solid #007bff;
+            overflow-x: auto;
+        }
+        img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📋 Evaluare Nr.2 - Raport</h1>
+    <p><strong>Student:</strong> Neagovici Galina</p>
+    <p><strong>Repository:</strong> <a href="https://github.com/neagovicigalina/Evaluare-Nr2" target="_blank">github.com/neagovicigalina/Evaluare-Nr2</a></p>
+
+    <h2>📸 Pașii efectuați</h2>
+
+    <div class="step">
+        <h3>1. Creare repository și fișiere inițiale</h3>
+        <div class="command">git clone https://github.com/neagovicigalina/Evaluare-Nr2.git<br>
+        echo "&lt;h1&gt;Evaluare Nr2&lt;/h1&gt;" > index.ev.2.html<br>
+        git add index.ev.2.html<br>
+        git commit -m "Adauga index.ev.2.html"<br>
+        git push origin main</div>
+        <img src="screenshots/step1.png" alt="Pasul 1" onerror="this.style.display='none'">
+    </div>
+
+    <div class="step">
+        <h3>2. Adăugare settings.xml și redenumire</h3>
+        <div class="command">echo "&lt;settings&gt;&lt;/settings&gt;" > settings.xml<br>
+        git add settings.xml<br>
+        git commit -m "Commit file settings.xml"<br>
+        git mv settings.xml configuration.xml<br>
+        git commit -m "Commit configuration.xml"<br>
+        git commit --amend -m "Commit file configuration.xml"</div>
+        <img src="screenshots/step2.png" alt="Pasul 2" onerror="this.style.display='none'">
+    </div>
+
+    <div class="step">
+        <h3>3. Creare branch stage și hosts.xml</h3>
+        <div class="command">git checkout -b stage<br>
+        git push origin stage<br>
+        echo "&lt;hosts&gt;&lt;/hosts&gt;" > hosts.xml<br>
+        git add hosts.xml<br>
+        git commit -m "Commit file hosts.xml"<br>
+        git push origin stage<br>
+        git checkout main<br>
+        git merge stage<br>
+        git push origin main</div>
+        <img src="screenshots/step3.png" alt="Pasul 3" onerror="this.style.display='none'">
+    </div>
+
+    <div class="step">
+        <h3>4. Creare branch dev și env.txt</h3>
+        <div class="command">git checkout stage<br>
+        git checkout -b dev<br>
+        echo "ENV=development" > env.txt<br>
+        git add env.txt<br>
+        git commit -m "Commit file env.txt"<br>
+        git checkout stage<br>
+        git merge dev<br>
+        git push origin stage</div>
+        <img src="screenshots/step4.png" alt="Pasul 4" onerror="this.style.display='none'">
+    </div>
+
+    <div class="step">
+        <h3>5. Redenumire branch dev în develop</h3>
+        <div class="command">git branch -m dev develop<br>
+        git push origin -u develop<br>
+        git push origin --delete dev</div>
+        <img src="screenshots/step5.png" alt="Pasul 5" onerror="this.style.display='none'">
+    </div>
+
+    <h2>✅ Rezultat final</h2>
+    <p>Toate operațiunile au fost executate cu succes. Repository-ul conține:</p>
+    <ul>
+        <li><code>index.ev.2.html</code></li>
+        <li><code>configuration.xml</code></li>
+        <li><code>hosts.xml</code></li>
+        <li><code>env.txt</code></li>
+        <li><code>page1.html</code></li>
+        <li>Branch-uri: <code>main</code>, <code>stage</code>, <code>develop</code></li>
+    </ul>
+</body>
+</html>
